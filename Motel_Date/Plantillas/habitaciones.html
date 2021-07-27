@@ -1,0 +1,42 @@
+
+{% load static  %}
+<!doctype html>
+<html lang="en">
+	
+  <head>
+    
+    <title>Inicio sesion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body class="text-center">
+  
+    <div id="idhabitaciones" class="list-list-group border rounded-start">
+      <h2 id="id1">Habitaciones</h2>
+      {% for habi in habitaciones %}
+          <button  id="h{{habi.id}}" class="list-group-item list-group-item-action list-group-item-dark">{{habi.especificaciones}}</button>
+      {% endfor %}
+    </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Realizar reservacion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="modalBody" class="modal-body">
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script   src="{% static 'habitaciones.js' %}"></script>  </body>
+</html>
